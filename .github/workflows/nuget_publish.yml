@@ -23,20 +23,11 @@ jobs:
       - name: Restore dependencies
         run: msbuild LittleGamesXamlResources.sln /t:Restore /p:Configuration=Release
 
-      # - name: Restore dependencies
-      #   run: dotnet restore      
-
       - name: Build
         run: msbuild LittleGamesXamlResources.sln /p:Configuration=Release
 
-      # - name: Build
-      #   run: dotnet build --configuration Release
-
       - name: Pack NuGet package
         run: dotnet pack LittleGamesXamlResources.csproj --configuration Release --output ./nupkgs
-
-      # - name: Push to GitHub Packages
-      #   run: dotnet nuget push ./nupkgs/LittleGames.XamlResources.1.0.0.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push all NuGet packages to GitHub
         run: |
