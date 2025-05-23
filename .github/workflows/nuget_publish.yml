@@ -12,16 +12,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install WinUI and MSIX build tools
+        uses: microsoft/setup-msbuild@v1.3.1
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: msbuild LittleGamesXamlResources.sln /t:Restore /p:Configuration=Release
+
+      # - name: Restore dependencies
+      #   run: dotnet restore      
 
       - name: Build
-        run: dotnet build --configuration Release
+        run: msbuild LittleGamesXamlResources.sln /p:Configuration=Release
+
+      # - name: Build
+      #   run: dotnet build --configuration Release
 
       - name: Pack NuGet package
         run: dotnet pack --configuration Release --output ./nupkgs
