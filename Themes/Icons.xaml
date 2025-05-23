@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:LittleGamesXamlResources.Themes">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <x:String x:Key="HomeIcon">&#xE80F;</x:String>
     <x:String x:Key="ViewAllIcon">&#xE8A9;</x:String>
