@@ -9,7 +9,7 @@
 
 	  <!-- NuGet package metadata -->
 	  <PackageId>LittleGames.XamlResources</PackageId>
-	  <Version>1.0.1</Version>
+	  <Version>1.0.2</Version>
 	  <Authors>Antoine Hanna</Authors>
 	  <Company>LittleGames</Company>
 	  <Description>Shared XAML resources for WinUI 3 applications</Description>
